@@ -7,6 +7,7 @@ import TopArtists from './TopArtists'
 import TopGenres from './TopGenres'
 import MusicProfile from './MusicProfile'
 import AccountStats from './AccountStats'
+import ShareButton from './ShareButton'
 import Loader from './Loader'
 
 function Dashboard({ token, onLogout }) {
@@ -92,6 +93,15 @@ function Dashboard({ token, onLogout }) {
   return (
     <div className="min-h-screen pb-12 bg-spotify-black">
       <Header profile={profile} onLogout={onLogout} />
+      
+      {/* Share Button - Only show when data is loaded */}
+      {!loading && analytics && (
+        <ShareButton 
+          profile={profile} 
+          analytics={analytics} 
+          timeRange={timeRange}
+        />
+      )}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         {/* Welcome Section */}

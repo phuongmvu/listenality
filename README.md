@@ -1,28 +1,29 @@
-# Listenality 🎵
+# Listenality
 
 Discover your music identity with Listenality - a beautiful Spotify analytics web app that reveals your listening personality, top tracks, artists, genres, and how your taste evolves over time.
 
-> ⚠️ **Important:** Spotify requires `127.0.0.1` instead of `localhost` in URIs. See setup instructions below.
+> **Important:** Spotify requires `127.0.0.1` instead of `localhost` in URIs. See setup instructions below.
 
 ## Features
 
-### 📊 Music Analytics
+### Music Analytics
 - **Your Library** - Total saved tracks, albums, and playlists
 - **Music Profile** - Popularity analysis, era preferences, and listening diversity
 - **Top Tracks** - Your most played songs with album art and Spotify links
 - **Top Artists** - Favorite artists with follower counts and profiles
 - **Top Genres** - Genre distribution with artist breakdowns
+- **Share Card** - Export your stats as a beautiful gradient-themed image optimized for Instagram Stories (1080x1920)
 
-### ⏰ Time Ranges
+### Time Ranges
 - Last 3 months
 - Last 6 months  
 - Last 12 months
 
-### 🎨 Design
-- Modern Spotify-themed interface
-- Glassmorphism cards and smooth animations
+### Design
+- Modern UI with vibrant gradient themes
+- Glassmorphism effects on shareable cards
 - Fully responsive (mobile, tablet, desktop)
-- Dark theme optimized for music apps
+- Beautiful Instagram Stories-optimized share cards (1080x1920)
 
 ## Setup
 
@@ -47,7 +48,7 @@ PORT=3001
 CLIENT_URL=http://127.0.0.1:5173
 ```
 
-⚠️ **Important:** Use `127.0.0.1` instead of `localhost` - Spotify no longer accepts localhost URLs!
+**Important:** Use `127.0.0.1` instead of `localhost` - Spotify no longer accepts localhost URLs!
 
 ### 3. Install Dependencies
 
@@ -71,6 +72,7 @@ The app will be available at:
 - **Backend**: Node.js + Express
 - **API**: Spotify Web API
 - **Charts**: Chart.js
+- **Image Export**: html2canvas
 
 ## How It Works
 
