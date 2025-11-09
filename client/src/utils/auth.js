@@ -10,6 +10,7 @@ export const getTokenFromUrl = () => {
 }
 
 export const loginUrl = () => {
-  return 'http://127.0.0.1:3001/api/auth/spotify/login'
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:3001'
+  return `${API_URL}/api/auth/spotify/login`
 }
 
