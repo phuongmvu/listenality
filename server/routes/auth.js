@@ -17,8 +17,40 @@ const generateRandomString = (length) => {
   return text;
 };
 
-// Login endpoint - redirects to Spotify auth
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Login endpoint - redirects to Spotify auth (disabled by default in production)
 router.get('/login', (req, res) => {
+  if (isProduction && process.env.ALLOW_SPOTIFY_LOGIN_REDIRECT !== 'true') {
+    return res
+      .status(403)
+      .type('text/html')
+      .send(`
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <title>Listenality Login</title>
+            <style>
+              body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #000; color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 2rem; }
+              .card { max-width: 520px; background: rgba(18, 18, 18, 0.85); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 2.5rem; text-align: center; box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.65); }
+              h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+              p { color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
+              a { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem; padding: 0.85rem 1.6rem; border-radius: 9999px; background: #1DB954; color: #000; text-decoration: none; font-weight: 600; }
+              a:hover { background: #1ed760; }
+            </style>
+          </head>
+          <body>
+            <div class="card">
+              <h1>Login from the Listenality app</h1>
+              <p>For security reasons this login endpoint isn’t accessible directly. Please open the Listenality dashboard and use the “Login with Spotify” button to continue.</p>
+              <a href="${process.env.CLIENT_URL || 'https://listenality.vercel.app'}">Go to Listenality</a>
+            </div>
+          </body>
+        </html>
+      `);
+  }
+
   const state = generateRandomString(16);
   const scope = 'user-read-private user-read-email user-top-read user-read-recently-played user-library-read playlist-read-private playlist-read-collaborative';
 

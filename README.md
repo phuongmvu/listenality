@@ -48,6 +48,8 @@ PORT=3001
 CLIENT_URL=http://127.0.0.1:5173
 GEMINI_API_KEY=your_gemini_api_key
 GEMINI_MODEL=gemini-1.5-flash
+# Set only for local development so backend /login redirect works
+ALLOW_SPOTIFY_LOGIN_REDIRECT=true
 ```
 
 Set `GEMINI_API_KEY` in your backend environment (Render + local `.env`). Override `GEMINI_MODEL` if you want a different Gemini variant.
