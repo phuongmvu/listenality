@@ -46,6 +46,18 @@ SPOTIFY_CLIENT_SECRET=your_client_secret_here
 SPOTIFY_REDIRECT_URI=http://127.0.0.1:3001/api/auth/spotify/callback
 PORT=3001
 CLIENT_URL=http://127.0.0.1:5173
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-1.5-flash
+```
+
+Set `GEMINI_API_KEY` in your backend environment (Render + local `.env`). Override `GEMINI_MODEL` if you want a different Gemini variant.
+
+For the Vite client, create `client/.env`:
+
+```env
+VITE_API_URL=http://127.0.0.1:3001
+VITE_SPOTIFY_CLIENT_ID=your_client_id_here
+VITE_SPOTIFY_REDIRECT_URI=http://127.0.0.1:5173
 ```
 
 **Important:** Use `127.0.0.1` instead of `localhost` - Spotify no longer accepts localhost URLs!

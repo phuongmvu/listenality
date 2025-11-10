@@ -49,8 +49,7 @@ function ShareButton({ profile, analytics, timeRange }) {
       {isOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto">
           <div className="bg-spotify-dark-gray rounded-2xl p-8 max-w-2xl my-8">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-white">Share your listenality</h2>
+            <div className="flex justify-end mb-6">
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-white/60 hover:text-white text-2xl"

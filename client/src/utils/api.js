@@ -39,5 +39,11 @@ export const getAccountStats = (token) => {
   })
 }
 
+export const getAIInsight = (token, payload) => {
+  return api.post('/api/ai/listenality', payload, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+}
+
 export default api
 

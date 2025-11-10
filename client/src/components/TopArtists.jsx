@@ -10,10 +10,10 @@ function TopArtists({ artists }) {
       </h2>
       
       <div className="space-y-3">
-        {artists.map((artist, index) => (
+        {artists.slice(0, 5).map((artist, index) => (
           <div
-            key={artist.id}
-            className={`flex items-center space-x-4 bg-black/30 hover:bg-spotify-gray/20 rounded-xl p-4 transition-all duration-200 transform hover:scale-[1.02] ${index === 4 ? 'hidden lg:flex' : ''}`}
+            key={artist.id || index}
+            className="flex items-center space-x-4 bg-black/30 hover:bg-spotify-gray/20 rounded-xl p-4 transition-all duration-200 transform hover:scale-[1.02]"
           >
             <div className="text-2xl font-bold text-white/60 w-8 text-center">
               {index + 1}

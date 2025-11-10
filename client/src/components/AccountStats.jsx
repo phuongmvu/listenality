@@ -13,7 +13,7 @@ function AccountStats({ stats }) {
   return (
     <div className="bg-spotify-dark-gray rounded-2xl p-6 sm:p-8 border border-spotify-gray/20">
       <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
-        Your Library
+        In a nutshell
       </h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
